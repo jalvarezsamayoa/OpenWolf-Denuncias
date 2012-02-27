@@ -5,3 +5,7 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+
+# Create a default user
+# Este usuario quedara disponible para pruebas
+AdminUser.create!(:email => 'admin@openwolf.org', :password => '123456', :password_confirmation => '123456')

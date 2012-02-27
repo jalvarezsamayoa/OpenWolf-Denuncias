@@ -2,37 +2,87 @@ source 'https://rubygems.org'
 
 gem 'rails', '3.2.1'
 
-# Bundle edge Rails instead:
-# gem 'rails', :git => 'git://github.com/rails/rails.git'
+gem 'pg' # Postgresql
+gem 'activeadmin', :git => 'git://github.com/gregbell/active_admin.git' #BackEnd Administrador
+gem "meta_search",    '>= 1.1.0.pre' # DSL Busquedas
+gem 'sass-rails',   '~> 3.2.3' # Integracion de Rails con SASS
 
-gem 'pg'
+gem 'jquery-rails' #Integracion de Rails con JQuery
 
+gem "paperclip" #upload files
+gem "aws-s3" # integrate with amazon s3
+gem "aws-sdk" # integrate with amazon s3
+gem 'devise' # rails generate devise:install
+
+gem "cancan" # permisions
+
+gem "ancestry" # allow model to act as tree
+gem 'draper' # decoracion de modelos para desplegar en vistas
+gem 'state_machine' # maneja estados de objetos
+gem 'airbrake' # bug tracking
+
+# gem "recaptcha", :require => "recaptcha/rails" # add recapcha challenge
+# gem "redcarpet" # allow markup in textareas
+# gem "prawn", "~> 0.12.0" # generate pdfs
+# gem 'sanitize'
 
 # Gems used only for assets and not required
 # in production environments by default.
 group :assets do
-  gem 'sass-rails',   '~> 3.2.3'
-  gem 'coffee-rails', '~> 3.2.1'
-
-  # See https://github.com/sstephenson/execjs#readme for more supported runtimes
-  # gem 'therubyracer'
-
+  gem 'coffee-rails', '~> 3.2.1' #Integracion de Raisl con CoffeeScript
   gem 'uglifier', '>= 1.0.3'
 end
 
-gem 'jquery-rails'
+group :development do
+  gem "haml-rails" #integracion de haml como lenguaje de vistas
+  gem "heroku" #integracion con heroku
+  gem "taps" # herramienta para db con heroku
+  gem 'annotate', :git => 'git://github.com/ctran/annotate_models.git', :require => false # herramienta anotar modelos
 
-# To use ActiveModel has_secure_password
-# gem 'bcrypt-ruby', '~> 3.0.0'
+  gem 'guard' # herramienta ve cambios a archivos y ejecuta accion
+  gem 'guard-livereload' # recarga browser cuando vistas cambian
+  gem 'yajl-ruby'
+  gem 'rack-livereload'
+end
 
-# To use Jbuilder templates for JSON
-# gem 'jbuilder'
+group :development, :test do
+  gem 'faker' #genera inforamcion para pruebas
+  gem 'factory_girl_rails' 
+  gem "database_cleaner" #limpia base de datos
+  gem "steak" # framework para testing basado en rspec
+  gem "rails3-generators" # plugin para utilizar generadores con haml
 
-# Use unicorn as the web server
-# gem 'unicorn'
+  gem 'libnotify' #integracion con notificaciones con sistema operativo
+  gem 'rb-inotify'
+end
 
-# Deploy with Capistrano
-# gem 'capistrano'
+group :production do
+  gem 'thin' # server needed for heroku
+end
 
-# To use debugger
-# gem 'ruby-debug19', :require => 'ruby-debug'
+
+#################
+# how to install
+################
+
+# active admin
+#   $> rails generate active_admin:install
+#   $> rails generate active_admin:install User
+# in production
+# config.assets.precompile += %w[active_admin.css active_admin.js]
+# orails generate active_admin:resource [MyModelName]
+
+#aws-s3
+# create config/s3.yml
+# http://doganberktas.com/2010/09/14/amazon-s3-and-paperclip-rails-3/
+
+# devise
+# rails generate devise:install
+# rails generate devise User
+
+
+# acts-as-taggable-only
+# rails generate acts_as_taggable_on:migration
+
+# drapper
+# Run rails g draper:install to create the directory and ApplicationDecorator
