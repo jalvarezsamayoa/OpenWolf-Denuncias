@@ -1,0 +1,34 @@
+.row
+  .homepage.span12
+    .row
+      #nueva-denuncia.span6.offset3
+        = image_tag('escudogt.jpg', :alt => "Escudo Republica de Guatemala", :id => "escudogt")
+        = link_to "Ingresa una denuncia", "/", :title => "Ingresa una nueva denuncia", :class => "btn btn-large btn-primary", :id => 'btn-nueva-denuncia'
+    .row
+      .span9
+        %h1 OpenWolf.org -  Módulo de Denuncias
+        %p Ingresa una denuncia...
+        %p Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enimad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enimad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+        %p Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enimad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+        %p
+          %strong Bla bla bla
+      .span3
+        #estadisticas
+          %h2 Estadísticas
+          %table.table.table-striped
+            %tr
+              %th Denuncias Presentadas:
+              %td 548,455
+            %tr
+              %th Denuncias En Proceso
+              %td 45,154
+            %tr
+              %th Denuncias Procesadas
+              %td 8,774
+        #links.well
+          %h2 Vínculos
+          %ul
+            %li
+              %a{:href => "http://transparencia.gob.gt", :title => 'Plataforma Virtual para la Trasparencia'} Transparencia.gob.gt
+            %li 
+              %a{:href => "http://viceprecidencia.gob.gt", :title => 'Viceprecidencia de la República'} Vicepresidencia de la República

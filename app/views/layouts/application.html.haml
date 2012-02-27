@@ -1,0 +1,28 @@
+!!!
+%html
+  %head
+    %title OpenWolf.org - Denuncias
+    = stylesheet_link_tag    "application", :media => "all"
+    = javascript_include_tag "application"
+    = csrf_meta_tags
+  %body
+    .navbar.navbar-fixed-top
+      .navbar-inner
+        .container
+          %a{:href => "/", :class => 'brand' }
+            OpenWolf.org
+          %ul.nav
+            %li.active
+              %a{:href => "/", :title => 'Ingresa una nueva denuncia'}
+                Ingresa Denuncia
+            %li 
+              %a{:href => "/", :title => 'Acerca De'} Acerca De
+            %li 
+              %a{:href => "/", :title => 'Ayuda'} Preguntas Frecuentes
+            %li
+              %a{:href => "/", :title => 'Contacto'} Contacto
+
+          %form.navbar-search.pull-right
+            %input{:type => 'text', :class => "search-query", :placeholder => "Buscar"}
+    .container
+      = yield
